@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- 단순 태그 : 태그명 + tab | enter -->
+  <div></div>
+  <a href=""></a>
+  <h1></h1>
+
+  <!-- 태그의 클래스, ID 속성을 추가 -->
+  <!-- 태그명.클래스명 / 태그명#ID명 -->
+  <div class="container"></div>
+  <div id="unique"></div>
+  <!-- cf) 태그명 생략 후 클래스, Id명 속성 지정 시 div 태그로 인식
+  >> . 기호만 지정 시 div 태그에 class 속성이 비워지 형태로 인식 -->
+  <div class="class"></div>
+  <div id="id"></div>
+  <div class=""></div>
+
+  <!-- 중첩과 형제 관계 -->
+  <!-- 자식 요소 : 태그 안에 포함된 태그 작성 시 : 부모태그 > 자식태그 
+      >> 활용 : 부모태그#id명 > 자식태그.class명
+      -->
+  <ul>
+    <li></li>
+  </ul>
+  <ul id="unordered">
+    <li class="item"></li>
+  </ul>
+
+  <!-- 형제 요소: 같은 선상의 요소 : 형제요소 + 형제요소 -->
+  <h1></h1>
+  <p></p>
+  <h1 id="heading"></h1>
+  <p class="paragraph"></p>
+
+  <!-- 반복 요소와 그룹핑 -->
+  <!-- 반복 요소 (태그*반복숫자값) -->
+  <ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+  <!-- 그룹핑 : 여러 emmet 기능을 동시 적용 -->
+  hearder 내에 nav, header의 형제 요소로 footer 작성
+  <!-- header>nav+footer -->
+  <header>
+    <nav></nav>
+    <footer></footer>
+  </header>
+
+  <!-- 그룹핑 : (header>nav)+footer -->
+  <header>
+    <nav></nav>
+  </header>
+  <footer></footer>
+  
+
+
+
+  
+</body>
+</html>

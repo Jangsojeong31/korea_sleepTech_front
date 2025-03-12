@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./flex03.css">
+</head>
+<body>
+  <!-- 
+  & Flexbox
+    - flex 컨테이너
+    - flex 아이템
+
+  * 1) align-items
+  : 'item'들이 "교차축"에서의 배치를 결정
+
+  ? 속성값
+  - strech(기본값)
+  - center(중앙 정렬)
+  - flex-start
+  - flex-end
+  - baseline
+
+  * 2) align-self
+  : '특정 아이템'이 '교차축'에서의 배치를 결정
+
+  ? 속성값 : align-items와 동일
+
+  * 3) justify-content
+  : '아이템들'의 '주축(기본 가로방향)'에서의 배치를 결정
+
+  ? 속성값
+    - flex-start
+    - flex-end
+    - center
+    - space-between(첫요소를 맨 앞에, 마지막 요소를 맨 뒤에, 나머지는 균등하게 배치)
+    - space-around(모든 요소 주위의 공백을 균등하게)
+
+  * 4) order(순서)
+  : '아이템' 순서 지정(기본값 : 0)
+  - 값이 클수록 후위 배치
+  - 순위값이 동등할 경우 소스 코드 순서
+  - 음수값 지정 가능
+  -->
+
+  <div>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <button id="four">4</button>
+    <button id="five">5</button>
+    <button id="six">6</button>
+  </div>
+
+</body>
+</html>

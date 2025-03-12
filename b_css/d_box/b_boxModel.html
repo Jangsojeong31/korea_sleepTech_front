@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* width, height 속성 
+    : 콘텐츠 주변의 여백이나 테두리를 뺀 내용의 크기
+    >> 길이단위, 백분율, auto(너비, 높이 중 하나의 값을 기준으로 결정 or 양에 따라 자동 결정 - 기본값)
+    */
+    *{
+      box-sizing: border-box;
+      /* => box-sizing: border-box; border를 포함해서 box의 사이즈를 맞춘다. 실제 콘텐츠의 너비: width - (패딩 + 테두리)
+      cf) 'content-box' 속성값은 콘텐츠 영역까지만
+      */
+    }
+
+    #lotte{
+      width: 100px;
+      height: 250px;
+      /* 콘텐츠 < 패딩 (여백) < 테두리 (border) < 마진 */
+      /* 너비와 높이값 지정의 기본은 콘텐츠 영역까지만을 차지 
+      >> 실제 크기값 계산에서 패딩과 테두리까지를 계산!
+      : box-sizing 속성 'border box' 속성값
+      */
+      padding: 10px;
+      border: 5px solid black;
+      background-color: lightblue;
+
+    }
+
+    /* 인라인 레벨 요소는 크기값을 지정할 수 없다.
+    >> 내용이 가진 양 만큼만을 차지 */
+    #runner-up{
+      width: 100px;
+      height: 250px;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+<!-- 
+! 박스 모델(Box Model)  
+  : 블록 레벨 요소에만 적용
+
+cf) 블록 레벨: 요소의 너비가 100% 차지
+    인라인 레벨: 요소의 너비가 내용(콘텐츠) 만큼만 차지
+
+cf) 브라우저에서 박스 모델 확인
+>> 개발자 도구 창
+  'ctrl + shift + i' / f12 | 우클릭 - 검사
+-->
+
+<h2>2025 프로야구 우승팀</h2>
+<div
+id="lotte"
+>
+  롯데 자이언츠
+  <!-- 블록 레벨 요소 -->
+  <p id="winner">연고지: 부산 / 감독: 김태형</p>
+</div>
+
+<div id="kia">
+  기아 타이거즈
+  <!-- 인라인 레벨 요소 -->
+  <span id="runner-up">연고지: 광주 / 감독: 이범호</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #outer{
+      width: 1100px;
+      height: auto;
+      background-color: lightpink;
+    }
+
+    .box{
+      width: 300px;
+      height: 300px;
+      border: 1px solid #222;
+      margin: 20px;
+      display: inline-block;
+      background: url('../flower-7696955_640.jpg') no-repeat left top;
+    }
+
+    #bg1{
+      /* auto: 원래 이미지 크기만큼 표시(기본값) */
+      background-size: auto;
+    }
+
+    #bg2{
+      /* 크기값 1개 : 너비값 지정(높이값은 이미지 비율에 맞게 자동 조정) */
+      background-size: 200px;
+    }
+
+    #bg3{
+      /* 부모 요소의 너비의 50%(높이값 자동 지정) */
+      background-size: 50%;
+    }
+    #bg4{
+      background-size: 50% 50%;
+    }
+
+    #bg5{
+      background-size: contain;
+    }
+
+    #bg6{
+      background-size: cover;
+    }
+    
+    </style>
+</head>
+<body>
+  <div id="outer">
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+    <div class="box" id="bg5"></div>
+    <div class="box" id="bg6"></div>
+  </div>
+  
+</body>
+</html>
