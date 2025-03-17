@@ -1,7 +1,7 @@
 // == JS의 배열 == //
 // : 여러개의 데이터를 순차적으로 나열한 자료 구조
-// +) 다양한 타입을 하나의 배열에 저장 가능
-// +) 배열의 크기가 고정 x (동적)
+// ? 다양한 타입을 하나의 배열에 저장 가능
+// ? 배열의 크기가 고정 x (동적)
 
 // - 인덱스 번호: 0부터 시작
 // - 각각의 데이터: 요소
@@ -23,20 +23,21 @@ let arrayFruits2 = new Array('사과', '오렌지', '망고');
 // ! 2. 배열의 활용
 // ? 1) 요소 접근 & 수정
 const sports = ['축구', '야구', '농구']; // const 배열
+console.log(typeof sports); // object
 
 console.log(sports[1]); // 야구
 
+// 배열은 참조 자료형 이기 때문에 const로 선언해도 요소의 값 재할당이 가능하다.
+// cf) 참조 자료형: 함수, 배열, 객체 등
+//    >> 실제 데이터 x, 메모리 주소를 저장하여 '참조'
 sports[2] = 'basketball'; // 요소값 변경
 console.log(sports); // [ '축구', '야구', 'basketball' ]
 
 const basketball = '농구';
 // basketball = 'basketball'; // const는 재할당 불가
 
-// 배열은 참조 자료형 이기 때문에 const로 선언해도 요소의 값 재할당이 가능하다.
-// cf) 참조 자료형: 함수, 배열, 객체 등
-//    >> 실제 데이터 x, 메모리 주소를 저장하여 '참조'
 
-// ? 요소 길이
+// ? 요소 길이: length
 console.log(sports.length); // 3
 
 // cf) JS 배열은 동적 배열: 임의로 배열의 크기를 수정
@@ -48,7 +49,7 @@ sports[5] = '배구';
 console.log(sports); // [ '축구', '야구', 'basketball', <2 empty items>, '배구' ]
 // cf) <2 empty items> : 연속된 2개의 undefined 요소
 
-// ? 배열 탐색 & 정보 확인
+// ? 배열 탐색 & 정보 확인: indexOf, lastIndexOf, Includes
 // : JS의 배열이 가지는 기본 기능
 // - 배열명.기능명();
 let snacks = ['칸쵸', '초코송이', '포테토칩', '초코송이'];
@@ -67,9 +68,72 @@ console.log(hasPotato); // ture
 // ? 배열 조작 함수
 fruits = ['Apple', 'Banana'];
 
-// 1) 추가: push(): 맨 마지막에 요소 추가
-// 2) 삭제: pop(): 맨 마지막 요소 제거 + 해당 값 반환
-//          shift(): 제일 첫번째 요소 제거 + 반환
+// 1) 추가: push(): 맨 마지막에 요소 추가 + 수정된 배열 길이 반환
 //          unshift(): 제일 첫 번째 하나 이상의 요소를 추가 + 수정된 배열 길이 반환
+// 2) 삭제: pop(): 맨 마지막 요소 제거 + 해당 요소 반환
+//          shift(): 제일 첫번째 요소 제거 + 해당 요소 반환
 // +) splice(): 추가 & 삭제
+
+let newLength = fruits.push('Cherry');
+console.log(newLength); // 3
+
+let lastFruit = fruits.pop();
+console.log(lastFruit); // Cherry
+
+let firstFruit = fruits.shift();
+console.log(firstFruit); // Apple
+
+newLength = fruits.unshift('mango', 'orange'); // 시작 부분에 하나 이상의 요소를 추가(,로 나열)
+console.log(newLength); 
+console.log(fruits); //[ 'mango', 'orange', 'Banana' ]
+
+// cf) 추가: 추가 후의 배열 길이를 반환
+//     삭제: 삭제한 요소를 반환
+
+// splice()
+// cf) splice(시작인덱스, 삭제할 요소의 개수, ...전체 아이템)
+// 1) 추가: splice(시작 인덱스, 0, 아이템 나열)
+
+console.log(fruits); //[ 'mango', 'orange', 'Banana' ]
+fruits.splice(1, 0, 'strawberry', 'coconut');
+console.log(fruits);  // [ 'mango', 'strawberry', 'coconut', 'orange', 'Banana' ]
+
+// 2) 삭제: splice(시작 인덱스, 삭제할 요소의 개수)
+let removedFruits = fruits.splice(1, 2);
+console.log(removedFruits); // [ 'strawberry', 'coconut' ]
+
+// ? 요소 정렬: sort, reverse
+// sort(): 오름차순 정렬
+// reverse(): 내림차순 정렬
+console.log(fruits.sort()); // [ 'Banana', 'mango', 'orange' ]
+console.log(fruits.reverse()); // [ 'orange', 'mango', 'Banana' ]
+
+// ? == 배열 변환 == //
+let fruitValues = ['사과', '바나나', '망고'];
+
+// 1) join('구분자'): 배열의 모든 요소를 연결하여 하나의 '문자열'로 변환
+//    >> 구분자를 전달하지 않은 경우 => ,가 기본값
+console.log(fruitValues.join()); // 사과,바나나,망고
+console.log(fruitValues.join(' ')); // 사과 바나나 망고
+console.log(fruitValues.join('-')); // 사과-바나나-망고
+
+// 2) split(): 문자열을 특정 구분자를 기준으로 분리하여 하나의 배열로 변환
+let str1 = '사과,바나나,망고';
+let str2 = '사과 바나나 망고';
+let str3 = '사과-바나나-망고';
+
+console.log(str1.split(',')); // [ '사과', '바나나', '망고' ]
+console.log(str2.split(' '));
+console.log(str3.split('-'));
+
+// ! 다차원 배열
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+console.log(matrix[0]); // [1, 2, 3]
+console.log(matrix[0][0]); // 1
+
 

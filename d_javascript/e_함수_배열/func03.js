@@ -51,7 +51,7 @@ print(1, 2, 3, 4, 5, 6, 7)
 function findMin(...numbers) {
   // ? ...연산자(spread 연산자)
   // : 배열의 요소들을 개별 인수로 펼치는 역할
-  let minNum = Math.min(...numbers) //  배열의 요소만 전달(배열 자체의 형태 x)
+  let minNum = Math.min(...numbers) //  ...number: 배열의 요소만 전달(배열 자체의 형태 x)
   return minNum;
 }
 
