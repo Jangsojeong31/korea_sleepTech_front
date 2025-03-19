@@ -71,7 +71,7 @@ function calculateTotal() {
 
 // ? 6) 장바구니 전체 삭제(초기화)
 function clearCart() {
-  cart = []; 
+  cart = []; // 초기화
   console.log('Cart is empty');
   displayCart();
 }

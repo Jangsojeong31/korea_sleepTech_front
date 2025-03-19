@@ -14,7 +14,7 @@
 
 let exampleLibrary = {
   books: [],
-
+  // 메서드
 }
 
 let exampleBook = {
@@ -32,7 +32,7 @@ class Book {
     this.id = id;
     this.title = title;
     this.author = author;
-    this.isAvailable = true;
+    this.isAvailable = true; // 기본값
   }
 
   // ? 책 대여
@@ -66,7 +66,7 @@ class Libraray {
   addBook(title, author) {
     const newBook = new Book(this.nextBookId, title, author);
     this.books.push(newBook);
-
+    
     console.log(`${title} 책이 도서관에 추가되었습니다. (저자: ${author})`);
     this.nextBookId++;
   }
@@ -135,6 +135,48 @@ class Libraray {
       console.log('해당 책을 찾을 수 없습니다.');
     }
   }
+
+  // & 추가 기능
+  
+  // [필터링] 저자별 도서 필터링(대소문자 구분 x)
+  filterBooksByAuthor(author){
+    console.log(`=== ${author}의 책 목록 ===`);
+    return this.books
+      .filter(book => book.author.toLowerCase() === author.toLowerCase())
+      .forEach(book => console.log(`${book.id}: ${book.title} - ${book.isAvailable ? '대여 가능' : '대여 중'}`));
+  }
+  
+  // [필터링] 제목 키워드로 도서 필터링(대소문자 구분 x)
+  filterBookByTitle(keyword) {
+    console.log(`제목에 ${keyword}가 포함된 도서:`);
+    this.books
+      .filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()))
+      .forEach(book => console.log(book));
+  }
+  
+  // [필터링] 대여 가능 여부로 도서 필터링
+  
+  fitlerBookByAvailable(isAvailable) {
+    const status = isAvailable? '대여 가능' : '대여 중';
+    console.log(`${status}인 책 목록: `);
+    const filtered = this.books.filter(book => book.isAvailable === isAvailable);
+    filtered.forEach(book => {
+        console.log(`${book.id}: ${book.title} by ${book.author}`);
+      });
+      // return filtered;
+
+    // console.log(`${isAvailable? '대여 가능' : '대여 중'}인 도서 목록: `);
+    //   this.books
+    //     .filter(book => book.isAvailable === isAvailable)
+    //     .forEach(book => console.log(book));
+  }
+
+
+  // [추가 기능] 대여 가능 도서 수 집계
+  countAvailableBook () {
+    const availableBook = this.books.filter(book => book.isAvailable).length;
+    console.log(`대여 가능한 도서 수: 총 ${availableBook}권`);
+  }
 }
 
 // ! === 프로젝트 실행 === //
@@ -149,10 +191,14 @@ busanLibrary.displayBooks();
 busanLibrary.rentBook(1);
 busanLibrary.displayBooks();
 
-busanLibrary.returnBook(1);
+// busanLibrary.returnBook(1);
 busanLibrary.displayBooks();
 
-busanLibrary.updateBook(2, '자바는 어려워', null);
-busanLibrary.removeBook(3);
-busanLibrary.displayBooks();
+// busanLibrary.updateBook(2, '자바는 어려워', null);
+// busanLibrary.removeBook(3);
+// busanLibrary.displayBooks();
+
+busanLibrary.fitlerBookByAvailable(true);
+busanLibrary.countAvailableBook();
+
 
