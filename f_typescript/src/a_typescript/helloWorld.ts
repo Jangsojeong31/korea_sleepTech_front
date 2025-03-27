@@ -30,6 +30,6 @@ console.log('ts-node로 ts파일 생성하기');
 // node_modules/
 // */node_modules
 
-// ! 해당 프로젝트를 pull한 경우
+// ! 해당 프로젝트를 pull한 경우(node_modules 없이 pull 됨)
 // : f_typescript(node_modules 폴더가 존재해야하는 위치)
-// - npm install
+// - npm install => node_modules를 다시 생성

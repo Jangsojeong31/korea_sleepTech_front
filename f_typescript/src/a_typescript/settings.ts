@@ -8,6 +8,68 @@
 
 ? Node.js 설치 전 삭제
 
+- 윈도우(Windows)
+  : 윈도우 키 > 프로그램 추가/제거 > Node.js 검색 후 삭제
+
+  : 아래 경로에 해당하는 디렉터리(폴더) 삭제
+    윈도우 키 > 파일 탐색기
+
+    C:\Program Files\Nodejs
+    C:\Program Files (x86)\Nodejs
+
+    C:\Users\ITPS\AppData\Roaming\npm
+    C:\사용자\ITPS\AppData\Roaming\npm
+
+    C:\Users\user\AppData\Roaming\npm
+    C:\사용자\user\AppData\Roaming\npm
+
+  : 윈도우 키 + r
+    > cmd(명령 프롬프트 실행)
+    > node -v
+      npm -v
+      (내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다. - 삭제 완료)
+
+- 맥(Mac OS)
+  : Homebrew를 사용하여 Node 제거 방법
+    응용 프로그램 > 유틸리티 폴더 > 터미널 실행
+    brew uninstall --force node
+
+  : 터미널 재실행
+    > node -v
+      npm -v
+      (내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다. - 삭제 완료)
+
+? Node.js 설치
+: 공식 웹 사이트(브라우저 > node.js 검색)
+: https://nodejs.org/ko
+
+- LTS(Long Term Support) 버전 설치 권장
+: 파일 탐색기 > 다운로드 > 다운로드 된 node.js 실행
+
+? 설치 완료 여부 확인
+  윈도우 키 + r > cmd(명령 프롬프트 창)
+  node -v / npm -v
+
+? Windows에서 npm 실행이 되지 않을 경우
+  (Node.js 시 npm이 자동 설치)
+
+윈도우 키 > 시스템 환경 변수 편집 > 시스템 속성 > 고급 > 우측 하단의 환경 변수 클릭
+
+: (위)사용자 변수에서 변수 Path 더블 클릭
+    '사용자 이름'에 대한 사용자 변수 설정
+    - 파일 탐색기 > c드라이브 > 사용자(Users) > 자신의 컴퓨터 이름(ITPS) > AppData > Roaming > npm 경로를 복사
+    (npm 폴더가 존재하지 않을 경우 생성 후 경로 복사)
+    : C:\Users\ITPS\AppData\Roaming\npm
+
+: (아래)시스템 변수 Path 설정
+    파일 탐색기 > c드라이브 > Program Files > nodejs 경로를 복사
+
+    > 복사한 경로를 Path 변수란에 새로 만들기 클릭 > 경로 삽입
+    (삽입 시 마지막에 \(원화)기호 첨부)
+    C:\Program Files\nodejs\
+
+>>>>> 환경 변수 편집 후에는 컴퓨터 자체 '다시 시작'을 권장 <<<<<
+
 ! 2. npm
 : NPM(Node Package Manager)은 Node.js의 기본 패키지 관리 도구
 - NPM을 사용하여 JS의 라이브러리를 쉽게 설치하고 관리
@@ -89,7 +151,7 @@ cf) Node 설치 시 npm 자동 설치
   : npx tsc --init
 
 
-! 설치 정리)
+! 설치 방법 정리)
 f_typescript 위치에서
 npm init
 npm install -g typescript
@@ -97,7 +159,7 @@ npm install --save-dev typescript (명령어 tsc-v로 확인)
 npx tsc --init
 
 
-cf) 터미널 명령어
+? cf) 터미널 명령어
 - 터미널 열기 단축키: ctrl + shift + `(백틱)
 
 cd 명령어: 사용자가 현재 위치하는 디렉토리(폴더) 변경할 때 사용
@@ -117,6 +179,4 @@ cd 명령어: 사용자가 현재 위치하는 디렉토리(폴더) 변경할 �
 
 5) 현재 디렉토리를 기준으로 하위 디렉토리 이동
 : cd 하위/디렉토리/경로
-
-
 */
