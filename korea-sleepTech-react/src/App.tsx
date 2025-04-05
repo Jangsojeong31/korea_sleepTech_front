@@ -4,6 +4,9 @@ import './App.css'
 // # 컴포넌트 import 
 import Basic from '@/pages/a_basic';
 import Hooks from '@/pages/b_hooks';
+import Router from '@/pages/c_router';
+import NaviBar from './components/NaviBar';
+import RouterPractice from '@/pages/d_router_practice';
 // cf) @/pages/a_basic:
 // index 파일명 - 하나의 폴더 내에서 하나만 생성 가능
 // index.tsx 파일은 해당 파일이 포함된 폴더의 메인 파일로 인식됨 
@@ -17,6 +20,7 @@ function App() {
   return (
     <>   
       <h1>Korea SleepTech React</h1>
+      <NaviBar />
       {/* Routes 태그: Route를 감싸는 컴포넌트 */}
       <Routes>
         {/* Route 태그: 단일 태그 사용 권장 */}
@@ -26,6 +30,15 @@ function App() {
         */}
         <Route path='/basic' element={<Basic />}/>
         <Route path='/hooks' element={<Hooks />}/>
+
+        {/* 
+          중첩 라우팅
+          : 해당 컴포넌트의 경로 내부에서 라우트 경로에 따라 페이지 전환이 일어남을 명시 
+          path='/기본경로/*'
+        */}
+        <Route path='/router/*' element={<Router />}/>
+        <Route path='/router-practice/*' element={<RouterPractice />}/>
+
       </Routes>
     </>
   )
