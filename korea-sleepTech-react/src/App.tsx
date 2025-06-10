@@ -7,6 +7,10 @@ import Hooks from '@/pages/b_hooks';
 import Router from '@/pages/c_router';
 import NaviBar from './components/NaviBar';
 import RouterPractice from '@/pages/d_router_practice';
+import Review from '@/pages/e_review';
+import Http from '@/pages/f_http';
+import GlobalState from '@/pages/g_global_state';
+
 // cf) @/pages/a_basic:
 // index 파일명 - 하나의 폴더 내에서 하나만 생성 가능
 // index.tsx 파일은 해당 파일이 포함된 폴더의 메인 파일로 인식됨 
@@ -38,6 +42,9 @@ function App() {
         */}
         <Route path='/router/*' element={<Router />}/>
         <Route path='/router-practice/*' element={<RouterPractice />}/>
+        <Route path='/review/*' element={<Review />}/>
+        <Route path='/http' element={<Http />}/>
+        <Route path='/global-state' element={<GlobalState />}/>
 
       </Routes>
     </>

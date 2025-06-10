@@ -45,8 +45,6 @@ function Posts() {
       {/* 
         JSX 문법: null 병합 연산자 ??
         const result = A ?? B
-
-
       */}
       <p>필터: userId = {userId ?? "없음"}</p>
       <ul>
